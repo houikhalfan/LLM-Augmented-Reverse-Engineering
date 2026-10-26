@@ -1,0 +1,419 @@
+{
+  "global": {
+    "recall": 1.0,
+    "precision": 1.0,
+    "TP": 24,
+    "FP": 0,
+    "FN": 0
+  },
+  "samples": [
+    {
+      "file": "sample_01_plain.c",
+      "obfuscation": "none",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "203.0.113.42"
+          ],
+          "found": [
+            "203.0.113.42"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "c2.malware-sample.test"
+          ],
+          "found": [
+            "c2.malware-sample.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SvcHost32"
+          ],
+          "found": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SvcHost32"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_02_plain.c",
+      "obfuscation": "none",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "198.51.100.7"
+          ],
+          "found": [
+            "198.51.100.7"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "exfil.attacker-lab.test"
+          ],
+          "found": [
+            "exfil.attacker-lab.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell"
+          ],
+          "found": [
+            "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_03_base64.c",
+      "obfuscation": "base64",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "203.0.113.88"
+          ],
+          "found": [
+            "203.0.113.88"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "beacon.c2-test.test"
+          ],
+          "found": [
+            "beacon.c2-test.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdaterSvc"
+          ],
+          "found": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdaterSvc"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_04_base64.c",
+      "obfuscation": "base64",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "198.51.100.33"
+          ],
+          "found": [
+            "198.51.100.33"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "drop.exfil-lab.test"
+          ],
+          "found": [
+            "drop.exfil-lab.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+          ],
+          "found": [
+            "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_05_xor.c",
+      "obfuscation": "xor",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "203.0.113.11"
+          ],
+          "found": [
+            "203.0.113.11"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "stage2.apt-sim.test"
+          ],
+          "found": [
+            "stage2.apt-sim.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\NetHelper"
+          ],
+          "found": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\NetHelper"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_06_xor.c",
+      "obfuscation": "xor",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "198.51.100.55"
+          ],
+          "found": [
+            "198.51.100.55"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "payload.malnet-lab.test"
+          ],
+          "found": [
+            "payload.malnet-lab.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run\\WinSvc"
+          ],
+          "found": [
+            "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run\\WinSvc"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_07_stack.c",
+      "obfuscation": "stack_strings",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "203.0.113.99"
+          ],
+          "found": [
+            "203.0.113.99"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "c2.stack-test.test"
+          ],
+          "found": [
+            "c2.stack-test.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SysMonitor"
+          ],
+          "found": [
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SysMonitor"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    },
+    {
+      "file": "sample_08_stack.c",
+      "obfuscation": "stack_strings",
+      "scores": {
+        "ips": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "198.51.100.77"
+          ],
+          "found": [
+            "198.51.100.77"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "domains": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "exfil.stack-lab.test"
+          ],
+          "found": [
+            "exfil.stack-lab.test"
+          ],
+          "missed": [],
+          "false_pos": []
+        },
+        "registry_keys": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "expected": [
+            "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit"
+          ],
+          "found": [
+            "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit"
+          ],
+          "missed": [],
+          "false_pos": []
+        }
+      }
+    }
+  ]
+}
