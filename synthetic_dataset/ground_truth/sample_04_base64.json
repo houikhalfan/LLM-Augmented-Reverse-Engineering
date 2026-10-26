@@ -1,0 +1,30 @@
+{
+  "sample": "sample_04_base64",
+  "obfuscation": "base64",
+  "iocs": {
+    "ips": [
+      "198.51.100.33"
+    ],
+    "domains": [
+      "drop.exfil-lab.test"
+    ],
+    "registry_keys": [
+      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+    ]
+  },
+  "encoded": {
+    "B64_DROP_IP": {
+      "b64": "MTk4LjUxLjEwMC4zMw==",
+      "decodes_to": "198.51.100.33"
+    },
+    "B64_DROP_DOM": {
+      "b64": "ZHJvcC5leGZpbC1sYWIudGVzdA==",
+      "decodes_to": "drop.exfil-lab.test"
+    },
+    "B64_REG_KEY": {
+      "b64": "SEtMTVxTb2Z0d2FyZVxNaWNyb3NvZnRcV2luZG93c1xDdXJyZW50VmVyc2lvblxSdW5cVGFza0hvc3Rz",
+      "decodes_to": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+    }
+  },
+  "notes": "All three IoC types are base64-encoded. Full decode required."
+}

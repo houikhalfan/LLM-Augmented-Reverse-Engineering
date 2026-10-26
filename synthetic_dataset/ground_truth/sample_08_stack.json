@@ -1,0 +1,16 @@
+{
+  "sample": "sample_08_stack",
+  "obfuscation": "stack_strings",
+  "iocs": {
+    "ips": [
+      "198.51.100.77"
+    ],
+    "domains": [
+      "exfil.stack-lab.test"
+    ],
+    "registry_keys": [
+      "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit"
+    ]
+  },
+  "notes": "ALL IoCs built char-by-char on the stack. Full stack string reconstruction required."
+}

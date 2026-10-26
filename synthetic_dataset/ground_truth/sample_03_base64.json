@@ -1,0 +1,26 @@
+{
+  "sample": "sample_03_base64",
+  "obfuscation": "base64",
+  "iocs": {
+    "ips": [
+      "203.0.113.88"
+    ],
+    "domains": [
+      "beacon.c2-test.test"
+    ],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdaterSvc"
+    ]
+  },
+  "encoded": {
+    "ENC_IP": {
+      "b64": "MjAzLjAuMTEzLjg4",
+      "decodes_to": "203.0.113.88"
+    },
+    "ENC_DOMAIN": {
+      "b64": "YmVhY29uLmMyLXRlc3QudGVzdA==",
+      "decodes_to": "beacon.c2-test.test"
+    }
+  },
+  "notes": "IP and domain are base64-encoded. Registry key is plain. Extractor must decode base64 constants."
+}

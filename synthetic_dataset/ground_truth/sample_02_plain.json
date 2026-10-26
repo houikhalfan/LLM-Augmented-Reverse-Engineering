@@ -1,0 +1,16 @@
+{
+  "sample": "sample_02_plain",
+  "obfuscation": "none",
+  "iocs": {
+    "ips": [
+      "198.51.100.7"
+    ],
+    "domains": [
+      "exfil.attacker-lab.test"
+    ],
+    "registry_keys": [
+      "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell"
+    ]
+  },
+  "notes": "Plain text. EXFIL_SERVER and EXFIL_DOMAIN are #define macros."
+}

@@ -1,0 +1,16 @@
+{
+  "sample": "sample_01_plain",
+  "obfuscation": "none",
+  "iocs": {
+    "ips": [
+      "203.0.113.42"
+    ],
+    "domains": [
+      "c2.malware-sample.test"
+    ],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SvcHost32"
+    ]
+  },
+  "notes": "All IoCs in plain text. Extractable by direct regex on raw code."
+}

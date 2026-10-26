@@ -1,0 +1,62 @@
+{
+  "sample": "sample_05_xor",
+  "obfuscation": "xor",
+  "xor_key": "0x42",
+  "iocs": {
+    "ips": [
+      "203.0.113.11"
+    ],
+    "domains": [
+      "stage2.apt-sim.test"
+    ],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\NetHelper"
+    ]
+  },
+  "encoded": {
+    "enc_ip": {
+      "hex": [
+        112,
+        114,
+        113,
+        108,
+        114,
+        108,
+        115,
+        115,
+        113,
+        108,
+        115,
+        115
+      ],
+      "key": "0x42",
+      "decodes_to": "203.0.113.11"
+    },
+    "enc_dom": {
+      "hex": [
+        49,
+        54,
+        35,
+        37,
+        39,
+        112,
+        108,
+        35,
+        50,
+        54,
+        111,
+        49,
+        43,
+        47,
+        108,
+        54,
+        39,
+        49,
+        54
+      ],
+      "key": "0x42",
+      "decodes_to": "stage2.apt-sim.test"
+    }
+  },
+  "notes": "IP and domain XOR-encoded with constant key 0x42. Registry key is plain."
+}

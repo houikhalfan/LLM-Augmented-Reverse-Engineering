@@ -1,0 +1,16 @@
+{
+  "sample": "sample_07_stack",
+  "obfuscation": "stack_strings",
+  "iocs": {
+    "ips": [
+      "203.0.113.99"
+    ],
+    "domains": [
+      "c2.stack-test.test"
+    ],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SysMonitor"
+    ]
+  },
+  "notes": "IP and domain built char-by-char. Preprocessor must reconstruct stack strings. Registry key is plain."
+}

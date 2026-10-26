@@ -1,0 +1,329 @@
+[
+  {
+    "sample": "sample_01_plain",
+    "obfuscation": "none",
+    "iocs": {
+      "ips": [
+        "203.0.113.42"
+      ],
+      "domains": [
+        "c2.malware-sample.test"
+      ],
+      "registry_keys": [
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SvcHost32"
+      ]
+    },
+    "notes": "All IoCs in plain text. Extractable by direct regex on raw code."
+  },
+  {
+    "sample": "sample_02_plain",
+    "obfuscation": "none",
+    "iocs": {
+      "ips": [
+        "198.51.100.7"
+      ],
+      "domains": [
+        "exfil.attacker-lab.test"
+      ],
+      "registry_keys": [
+        "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell"
+      ]
+    },
+    "notes": "Plain text. EXFIL_SERVER and EXFIL_DOMAIN are #define macros."
+  },
+  {
+    "sample": "sample_03_base64",
+    "obfuscation": "base64",
+    "iocs": {
+      "ips": [
+        "203.0.113.88"
+      ],
+      "domains": [
+        "beacon.c2-test.test"
+      ],
+      "registry_keys": [
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdaterSvc"
+      ]
+    },
+    "encoded": {
+      "ENC_IP": {
+        "b64": "MjAzLjAuMTEzLjg4",
+        "decodes_to": "203.0.113.88"
+      },
+      "ENC_DOMAIN": {
+        "b64": "YmVhY29uLmMyLXRlc3QudGVzdA==",
+        "decodes_to": "beacon.c2-test.test"
+      }
+    },
+    "notes": "IP and domain are base64-encoded. Registry key is plain. Extractor must decode base64 constants."
+  },
+  {
+    "sample": "sample_04_base64",
+    "obfuscation": "base64",
+    "iocs": {
+      "ips": [
+        "198.51.100.33"
+      ],
+      "domains": [
+        "drop.exfil-lab.test"
+      ],
+      "registry_keys": [
+        "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+      ]
+    },
+    "encoded": {
+      "B64_DROP_IP": {
+        "b64": "MTk4LjUxLjEwMC4zMw==",
+        "decodes_to": "198.51.100.33"
+      },
+      "B64_DROP_DOM": {
+        "b64": "ZHJvcC5leGZpbC1sYWIudGVzdA==",
+        "decodes_to": "drop.exfil-lab.test"
+      },
+      "B64_REG_KEY": {
+        "b64": "SEtMTVxTb2Z0d2FyZVxNaWNyb3NvZnRcV2luZG93c1xDdXJyZW50VmVyc2lvblxSdW5cVGFza0hvc3Rz",
+        "decodes_to": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\TaskHosts"
+      }
+    },
+    "notes": "All three IoC types are base64-encoded. Full decode required."
+  },
+  {
+    "sample": "sample_05_xor",
+    "obfuscation": "xor",
+    "xor_key": "0x42",
+    "iocs": {
+      "ips": [
+        "203.0.113.11"
+      ],
+      "domains": [
+        "stage2.apt-sim.test"
+      ],
+      "registry_keys": [
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\NetHelper"
+      ]
+    },
+    "encoded": {
+      "enc_ip": {
+        "hex": [
+          112,
+          114,
+          113,
+          108,
+          114,
+          108,
+          115,
+          115,
+          113,
+          108,
+          115,
+          115
+        ],
+        "key": "0x42",
+        "decodes_to": "203.0.113.11"
+      },
+      "enc_dom": {
+        "hex": [
+          49,
+          54,
+          35,
+          37,
+          39,
+          112,
+          108,
+          35,
+          50,
+          54,
+          111,
+          49,
+          43,
+          47,
+          108,
+          54,
+          39,
+          49,
+          54
+        ],
+        "key": "0x42",
+        "decodes_to": "stage2.apt-sim.test"
+      }
+    },
+    "notes": "IP and domain XOR-encoded with constant key 0x42. Registry key is plain."
+  },
+  {
+    "sample": "sample_06_xor",
+    "obfuscation": "xor",
+    "xor_key": "0x42",
+    "iocs": {
+      "ips": [
+        "198.51.100.55"
+      ],
+      "domains": [
+        "payload.malnet-lab.test"
+      ],
+      "registry_keys": [
+        "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run\\WinSvc"
+      ]
+    },
+    "encoded": {
+      "xor_ip": {
+        "hex": [
+          115,
+          123,
+          122,
+          108,
+          119,
+          115,
+          108,
+          115,
+          114,
+          114,
+          108,
+          119,
+          119
+        ],
+        "decodes_to": "198.51.100.55"
+      },
+      "xor_dom": {
+        "hex": [
+          50,
+          35,
+          59,
+          46,
+          45,
+          35,
+          38,
+          108,
+          47,
+          35,
+          46,
+          44,
+          39,
+          54,
+          111,
+          46,
+          35,
+          32,
+          108,
+          54,
+          39,
+          49,
+          54
+        ],
+        "decodes_to": "payload.malnet-lab.test"
+      },
+      "xor_reg": {
+        "hex": [
+          10,
+          9,
+          14,
+          15,
+          30,
+          17,
+          45,
+          36,
+          54,
+          53,
+          35,
+          48,
+          39,
+          30,
+          15,
+          43,
+          33,
+          48,
+          45,
+          49,
+          45,
+          36,
+          54,
+          30,
+          21,
+          43,
+          44,
+          38,
+          45,
+          53,
+          49,
+          30,
+          1,
+          55,
+          48,
+          48,
+          39,
+          44,
+          54,
+          20,
+          39,
+          48,
+          49,
+          43,
+          45,
+          44,
+          30,
+          18,
+          45,
+          46,
+          43,
+          33,
+          43,
+          39,
+          49,
+          30,
+          7,
+          58,
+          50,
+          46,
+          45,
+          48,
+          39,
+          48,
+          30,
+          16,
+          55,
+          44,
+          30,
+          21,
+          43,
+          44,
+          17,
+          52,
+          33
+        ],
+        "decodes_to": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run\\WinSvc"
+      }
+    },
+    "notes": "All three IoC types XOR-encoded with key 0x42."
+  },
+  {
+    "sample": "sample_07_stack",
+    "obfuscation": "stack_strings",
+    "iocs": {
+      "ips": [
+        "203.0.113.99"
+      ],
+      "domains": [
+        "c2.stack-test.test"
+      ],
+      "registry_keys": [
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SysMonitor"
+      ]
+    },
+    "notes": "IP and domain built char-by-char. Preprocessor must reconstruct stack strings. Registry key is plain."
+  },
+  {
+    "sample": "sample_08_stack",
+    "obfuscation": "stack_strings",
+    "iocs": {
+      "ips": [
+        "198.51.100.77"
+      ],
+      "domains": [
+        "exfil.stack-lab.test"
+      ],
+      "registry_keys": [
+        "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit"
+      ]
+    },
+    "notes": "ALL IoCs built char-by-char on the stack. Full stack string reconstruction required."
+  }
+]
